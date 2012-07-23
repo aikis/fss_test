@@ -1,0 +1,24 @@
+<h1>Listing campaigns</h1>
+<% content_for :add_js do %>
+  <%= javascript_include_tag "main" %>
+<% end %>
+
+<%= button_to 'New', new_campaign_path %>
+<%= select_tag(:option_id, options_for_select(@options, @selected_option)) %>
+<table>
+  <tr>
+    <th>Campaign name</th>
+    <th>Status</th>
+    <th>Start Date</th>
+  </tr>
+
+<% @campaigns.each do |campaign| %>
+  <tr>
+    <td><%=h link_to campaign.name, campaign %></td>
+    <td><%=h campaign.status.name %></td>
+    <td><%=h campaign.created_at.to_date.to_s %></td>
+    <td><%= link_to 'Edit', edit_campaign_path(campaign) %></td>
+    <td><%= button_to 'Destroy', campaign, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

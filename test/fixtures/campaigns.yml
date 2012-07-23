@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  owner_id: 
+  active: false
+  type_id: 1
+  status_id: 1
+  parent: 
+  description: MyText
+
+two:
+  owner_id: 
+  active: false
+  type_id: 1
+  status_id: 1
+  parent: 
+  description: MyText

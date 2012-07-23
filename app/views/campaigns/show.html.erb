@@ -1,0 +1,40 @@
+<p>
+  <b>Name:</b>
+  <%=h @campaign.name %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%=h @campaign.owner.name %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%=h check_box_tag @campaign.active, @campaign.active, @campaign.active , :disabled => true %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%=h @campaign.type.name %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @campaign.status.name %>
+</p>
+
+<% if @campaign.parent %>
+  <p>
+    <b>Parent:</b>
+    <%=h @campaign.parent.name %>
+  </p>
+<% end %>
+
+<p>
+  <b>Description:</b>
+  <%=h @campaign.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
+<%= link_to 'Back', campaigns_path %>

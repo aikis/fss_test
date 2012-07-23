@@ -1,0 +1,41 @@
+<h1>Editing campaign</h1>
+
+<% form_for(@campaign) do |f| %>
+  <%= f.error_messages %>
+
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :owner_id %><br />
+    <%= @campaign.owner.name %>
+  </p>
+  <p>
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </p>
+  <p>
+    <%= f.label :type_id %><br />
+    <%= f.select :type_id, @types %>
+  </p>
+  <p>
+    <%= f.label :status_id %><br />
+    <%= f.select :status_id, @statuses %>
+  </p>
+  <p>
+    <%= f.label :parent %><br />
+    <%= f.text_field :parent %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @campaign %> |
+<%= link_to 'Back', campaigns_path %>
